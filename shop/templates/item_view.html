@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indeche</title>
+    <style>
+        /* Add inline styles or include these in your CSS file */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive columns */
+            gap: 20px; /* Spacing between items */
+            padding: 10px;
+        }
+        .grid-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        .grid-item img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Kelly's Market Place</h2>
+    </header>
+    <main>
+        <section class="grid-container">
+            {% for item in item %}
+            <div class="grid-item">
+                <img src="{{ item.image.url }}" alt="{{ item.name }}">
+                <p><strong>{{ item.name }}</strong></p>
+                <p>{{ item.description }}</p>
+                <p><strong>Price:</strong> Ksh {{ item.price }}</p>
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+</body>
+</html>

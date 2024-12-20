@@ -1,0 +1,10 @@
+.img{
+    width: 200px;
+    height: auto;
+}
+
+.div{
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+}
